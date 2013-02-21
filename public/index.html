@@ -112,7 +112,6 @@
 		function saveData() {
 		   
 		   var sendInfo = { Project: "New Heroku App", Author: "New Author"};
-		   var jsonSendInfo = JSON.stringify(sendInfo);
 		   	
 		   $.ajax({
 		      type: "POST",
@@ -128,7 +127,7 @@
 		         }
 		      },
 		
-		      data: jsonSendInfo
+		      data: sendInfo
 		   });
 
 		}
