@@ -6,16 +6,16 @@ $("#saveDataButton").click( function()
         
 function saveData() {
    
-   var sendInfo = { Name: "Heroku App2", Author: "Johnny"};
+   var sendInfo = { Project: "New Heroku App", Author: "New Author"};
 
    $.ajax({
       type: "POST",
       url: "/data",
       dataType: "json",
-      success: function (msg) {
-         if (msg) {
-            alert("Somebody was saved !");
-            location.reload(true);
+      success: function (data) {
+         if (data.Project) {
+            //alert(data);
+            $('#target').html("Project Name: " + data.Project + "<br /> Author:" + data.Author);
          }
          else {
             alert("Cannot add to list !");

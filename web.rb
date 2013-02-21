@@ -13,7 +13,6 @@ get '/data' do
 end
 
 post '/data' do
-  @data = {:Project => {:Name=>"Heroku-WebApp", :Author=>"John Ryan"}}
-  puts "here"
-  @data.to_json
+  puts @params
+  @params.to_json
 end
